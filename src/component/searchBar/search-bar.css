@@ -1,0 +1,19 @@
+.search-bar form {
+    display: block;
+}
+
+input[type=text] {
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    height: 25px;
+    margin-right: 20px;
+    width: 70%;
+}
+
+.btnSearch {
+    border: none;
+    padding: 7px;
+    color: white;
+    border-radius: 5px;
+    background-color: blue;
+}
