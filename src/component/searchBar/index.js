@@ -12,11 +12,9 @@ const SearchBar = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(text)
-        dispatch(searchTextChange({
-            searchText: text
-        }));
+        dispatch(searchTextChange(text));
     }
+
 
     return (
         <div className='search-bar'>

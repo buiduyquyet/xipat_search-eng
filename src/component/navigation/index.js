@@ -12,9 +12,6 @@ const Navigator = () => {
         <div className='navigator'>
             <ul>
                 <li>
-                    <NavLink to='/' className='nav-NavLink' style={navLinkStyle}>Tìm từ: </NavLink>
-                </li>
-                <li>
                     <NavLink to='/homonym' className='nav-link' style={navLinkStyle}>Đồng âm</NavLink>
                 </li>
                 <li>

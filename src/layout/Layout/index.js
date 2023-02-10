@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import Pagination from '../../component/pagination';
+import { searchTextChange } from '../../redux/action';
 
 const LayoutContent = ({ data }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -7,9 +9,11 @@ const LayoutContent = ({ data }) => {
 
     const indexOfLastPost = currentPage * wordsPerPage;
     const indexOfFirstPost = indexOfLastPost - wordsPerPage;
-    const currentWords = data.slice(indexOfFirstPost, indexOfLastPost);
+    const currentWords = data.slice(indexOfFirstPost, indexOfLastPost).sort((a, b) => b.score - a.score);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    const dispatch = useDispatch();
 
     return (
         <div className='layout-content'>
@@ -19,7 +23,8 @@ const LayoutContent = ({ data }) => {
                     : (
                         currentWords.map((item, index) => (
                             <div className='content' key={index}>
-                                <p className='content-word'><span>{index + 1}</span>. {item.word}</p>
+                                <p className='content-word' onClick={() => dispatch(searchTextChange(item.word))}><span>{index + 1}</span>. {item.word}</p>
+                                <span>Score: {item.score ? item.score : 'not have score'}</span>
                                 <p className='content-detail'>{item.defs ? item.defs : "Not have define"}</p>
                             </div>
                         ))

@@ -1,22 +1,16 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
+import { getData } from '../../component/getData';
 import LayoutContent from '../../layout/Layout'
+import { searchTextSelector } from '../../redux/selectors';
 
 const Opposite = () => {
     const [data, setData] = useState([]);
+    const searchText = useSelector(searchTextSelector);
 
     useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await axios.get('https://api.datamuse.com/words?rel_ant=ocean&md=d')
-                setData(res.data);
-                // console.log(res.data)
-            } catch (error) {
-                console.error("Error: ", error)
-            }
-        }
-        getData();
-    }, [])
+        getData(searchText, 'rel_ant', setData);
+    }, [searchText])
 
     return (
         <LayoutContent data={data} />

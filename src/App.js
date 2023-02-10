@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './component/Home';
 import Navigator from './component/navigation';
 import SearchBar from './component/searchBar';
 import Homonym from './view/homonym';
@@ -17,7 +16,7 @@ function App() {
       <Navigator />
       <SearchBar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Homonym />} />
         <Route path='/homonym' element={<Homonym />} />
         <Route path='/synonymous' element={<Synonymous />} />
         <Route path='/opposite' element={<Opposite />} />
