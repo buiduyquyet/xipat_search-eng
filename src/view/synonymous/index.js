@@ -5,11 +5,10 @@ import LayoutContent from '../../layout/Layout'
 const Synonymous = () => {
     const [data, setData] = useState([]);
 
-
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await axios.get('https://api.datamuse.com/words?ml=learn')
+                const res = await axios.get('https://api.datamuse.com/words?ml=learn&md=d')
                 setData(res.data);
                 // console.log(res.data)
             } catch (error) {
@@ -19,13 +18,7 @@ const Synonymous = () => {
         getData();
     }, [])
     return (
-        <>
-            {
-                data.map((item, i) => (
-                    <LayoutContent index={i + 1} word={item.word} content={item.score} />
-                ))
-            }
-        </>
+        <LayoutContent data={data} />
     )
 }
 

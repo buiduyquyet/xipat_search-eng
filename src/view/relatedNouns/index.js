@@ -8,7 +8,7 @@ const RelatedNouns = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await axios.get('https://api.datamuse.com/words?rel_jja=ocean')
+                const res = await axios.get('https://api.datamuse.com/words?rel_jja=ocean&md=d')
                 setData(res.data);
             } catch (error) {
                 console.error("Error: ", error)
@@ -17,13 +17,7 @@ const RelatedNouns = () => {
         getData();
     }, [])
     return (
-        <>
-            {
-                data.map((item, i) => (
-                    <LayoutContent index={i + 1} word={item.word} content={item.score} />
-                ))
-            }
-        </>
+        <LayoutContent data={data} />
     )
 }
 

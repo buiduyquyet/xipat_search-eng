@@ -8,7 +8,7 @@ const Opposite = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await axios.get('')
+                const res = await axios.get('https://api.datamuse.com/words?rel_ant=ocean&md=d')
                 setData(res.data);
                 // console.log(res.data)
             } catch (error) {
@@ -19,13 +19,7 @@ const Opposite = () => {
     }, [])
 
     return (
-        <>
-            {
-                data.map((item, i) => (
-                    <LayoutContent index={i + 1} word={item.word} content={item.score} />
-                ))
-            }
-        </>
+        <LayoutContent data={data} />
     )
 }
 

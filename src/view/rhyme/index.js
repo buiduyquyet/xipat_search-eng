@@ -8,7 +8,7 @@ const Rhyme = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await axios.get('https://api.datamuse.com/words?sp=learn')
+                const res = await axios.get('https://api.datamuse.com/words?sp=learn&md=d')
                 setData(res.data);
                 // console.log(res.data)
             } catch (error) {
@@ -19,13 +19,7 @@ const Rhyme = () => {
     }, [])
 
     return (
-        <>
-            {
-                data.map((item, i) => (
-                    <LayoutContent index={i + 1} word={item.word} content={item.score} />
-                ))
-            }
-        </>
+        <LayoutContent data={data} />
     )
 }
 

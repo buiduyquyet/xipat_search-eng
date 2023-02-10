@@ -2,13 +2,13 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './component/Home';
 import Navigator from './component/navigation';
-import Opposite from './component/opposite';
-import RelatedNouns from './component/relatedNouns';
-import Rhyme from './component/rhyme';
 import SearchBar from './component/searchBar';
-import Synonymous from './component/synonymous';
 import Homonym from './view/homonym';
+import Opposite from './view/opposite';
 import RelatedAdjectives from './view/relatedAdjectives';
+import RelatedNouns from './view/relatedNouns';
+import Rhyme from './view/rhyme';
+import Synonymous from './view/synonymous';
 
 function App() {
   return (
