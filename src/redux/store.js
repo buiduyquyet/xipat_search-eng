@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import SearchReducer from '../component/searchBar/SearchSlice';
+import SearchReducer from './slice/SearchSlice';
 
 const composedEnhancers = composeWithDevTools();
 

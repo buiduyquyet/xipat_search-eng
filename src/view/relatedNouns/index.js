@@ -11,7 +11,7 @@ const RelatedNouns = () => {
 
     useEffect(() => {
         getData(searchText, 'rel_jja', setData);
-    }, [])
+    }, [searchText])
     return (
         <LayoutContent data={data} />
     )

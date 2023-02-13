@@ -10,7 +10,7 @@ const Synonymous = () => {
 
     useEffect(() => {
         getData(searchText, 'ml', setData);
-    }, [])
+    }, [searchText])
     return (
         <LayoutContent data={data} />
     )

@@ -10,7 +10,7 @@ const Rhyme = () => {
 
     useEffect(() => {
         getData(searchText, 'sp', setData);
-    }, [])
+    }, [searchText])
 
     return (
         <LayoutContent data={data} />

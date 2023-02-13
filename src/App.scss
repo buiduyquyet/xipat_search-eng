@@ -1,0 +1,31 @@
+@mixin customContent ($color, $fontWeight, $fontStyle) {
+  color: $color;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+.App {
+  text-align: center;
+
+  .content {
+    text-align: left;
+    margin-left: 12%;
+
+    .content-detail {
+      // color: #188b75;
+      // font-weight: 600;
+      // font-style: italic;
+      @include customContent(#188b75, 600, italic);
+    }
+
+    .content-word {
+      // color: #3b80c7;
+      // font-weight: 700;
+      @include customContent(#3b80c7, 700, '');
+
+      span {
+        color: black;
+      }
+    }
+  }
+}

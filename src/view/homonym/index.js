@@ -1,9 +1,7 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import LayoutContent from '../../layout/Layout'
 import { searchTextSelector } from '../../redux/selectors';
-import './homonym.css'
 import { getData } from '../../component/getData';
 
 const Homonym = () => {

@@ -23,7 +23,7 @@ const LayoutContent = ({ data }) => {
                     : (
                         currentWords.map((item, index) => (
                             <div className='content' key={index}>
-                                <p className='content-word' onClick={() => dispatch(searchTextChange(item.word))}><span>{index + 1}</span>. {item.word}</p>
+                                <p className='content-word' onClick={() => dispatch(searchTextChange(item.word))}><span>{index + 1 + (currentPage - 1) * 10}</span>. {item.word}</p>
                                 <span>Score: {item.score ? item.score : 'not have score'}</span>
                                 <p className='content-detail'>{item.defs ? item.defs : "Not have define"}</p>
                             </div>
@@ -34,6 +34,7 @@ const LayoutContent = ({ data }) => {
                 wordsPerPage={wordsPerPage}
                 totalPosts={data.length}
                 paginate={paginate}
+                currentPage={currentPage}
             />
         </div>
     )

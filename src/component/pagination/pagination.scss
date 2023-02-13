@@ -1,0 +1,17 @@
+$customColor: lightblue;
+
+.pagination {
+    .active {
+        background-color: $customColor;
+    }
+
+    a {
+        border: 1px solid $customColor;
+        margin: 5px;
+        padding: 10px;
+    }
+
+    a:hover {
+        @extend .active;
+    }
+}
